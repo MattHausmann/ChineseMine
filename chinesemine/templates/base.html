@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %} - Flask App</title>
+  <style>
+    /* This is the CSS code for the home page */
+
+/* This is the global style that applies to all elements of your website */
+* {
+  box-sizing: border-box; /* This makes the width and height of the elements include the padding and border */
+  margin: 0; /* This removes the default margin of the elements */
+  padding: 0; /* This removes the default padding of the elements */
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0;
+}
+
+
+/* This is the style for the header section */
+header {
+  font-family: 'Pacifico';
+  display: flex; /* This makes the header a flexible container that can adjust its size and position of its children */
+  align-items: center; /* This aligns the header children vertically in the center */
+  background-color:#ee1c25;
+  height: 100px; /* This sets the height of the header to 100 pixels */
+}
+
+/* This is the style for the logo section */
+.logo {
+  width: 20%; /* This sets the width of the logo section to 20% of the header width */
+}
+
+/* This is the style for the logo image */
+.logo img {
+  width: 100%; /* This sets the width of the logo image to 100% of the logo section width */
+  height: auto; /* This sets the height of the logo image to auto, which means it will keep its aspect ratio */
+}
+
+/* This is the style for the slogan section */
+.slogan {
+  width: 80%; /* This sets the width of the slogan section to 80% of the header width */
+  text-align: center; /* This aligns the text of the slogan section to the center */
+  color: white; /* This sets the color of the text of the slogan section to white */
+}
+
+/* This is the style for the slogan heading */
+.slogan h1 {
+  font-size: 36px; /* This sets the font size of the slogan heading to 36 pixels */
+  font-weight: bold; /* This sets the font weight of the slogan heading to bold */
+}
+
+/* This is the style for the slogan paragraph */
+.slogan p {
+  font-size: 18px; /* This sets the font size of the slogan paragraph to 18 pixels */
+}
+
+/* This is the style for the navigation bar section */
+nav {
+  display: flex; /* This makes the navigation bar a flexible container that can adjust its size and position of its children */
+  justify-content: space-around; /* This distributes the navigation bar children evenly along the horizontal axis */
+  background-color: #FFFF00; /* This sets the background color of the navigation bar to yellow */
+  height: 50px; /* This sets the height of the navigation bar to 50 pixels */
+}
+
+/* This is the style for the navigation bar list */
+nav ul {
+  display: flex; /* This makes the navigation bar list a flexible container that can adjust its size and position of its children */
+  list-style: none; /* This removes the default bullets of the list items */
+}
+
+/* This is the style for the navigation bar list items */
+nav li {
+  display: flex; /* This makes the navigation bar list items a flexible container that can adjust its size and position of their children */
+  align-items: center; /* This aligns the navigation bar list items children vertically in the center */
+}
+
+/* This is the style for the navigation bar links */
+nav a {
+  display: block; /* This makes the navigation bar links block-level elements that take up the full width of their parent */
+  text-decoration: none; /* This removes the default underline of the links */
+  color: black; /* This sets the color of the links to black */
+  font-size: 18px; /* This sets the font size of the links to 18 pixels */
+  font-weight: bold; /* This sets the font weight of the links to bold */
+  padding: 10px; /* This adds some space around the links */
+}
+
+/* This is the style for the active navigation bar link */
+nav a.active {
+  border-bottom: 3px solid black; /* This adds a black border at the bottom of the active link */
+}
+
+/* This is the style for the main section */
+main {
+  display: flex; /* This makes the main section a flexible container that can adjust its size and position of its children */
+  flex-direction: column; /* This makes the main section children stack vertically */
+  align-items: center; /* This aligns the main section children horizontally in the center */
+  background-color: white; /* This sets the background color of the main section to white */
+  padding: 20px; /* This adds some space around the main section */
+}
+
+/* This is the style for the introduction section */
+.intro {
+  width: 80%; /* This sets the width of the introduction section to 80% of the main section width */
+  text-align: center; /* This aligns the text of the introduction section to the center */
+}
+
+/* This is the style for the introduction heading */
+.intro h2 {
+  font-size: 24px; /* This sets the font size of the introduction heading to 24 pixels */
+  font-weight: bold; /* This sets the font weight of the introduction heading to bold */
+  margin-bottom: 20px; /* This adds some space below the introduction heading */
+}
+
+/* This is the style for the introduction paragraphs */
+.intro p {
+  font-size: 18px; /* This sets the font size of the introduction paragraphs to 18 pixels */
+  margin-bottom: 10px; /* This adds some space below the introduction paragraphs */
+}
+
+/* This is the style for the introduction button */
+.intro button {
+  display: block; /* This makes the introduction button a block-level element that takes up the full width of its parent */
+  background-color: #EE1C25; /* This sets the background color of the introduction button to red */
+  color: white; /* This sets the color of the text of the introduction button to white */
+  font-size: 18px; /* This sets the font size of the text of the introduction button to 18 pixels */
+  font-weight: bold; /* This sets the font weight of the text of the introduction button to bold */
+  border: none; /* This removes the default border of the button */
+  padding: 10px; /* This adds some space around the button */
+  margin-top: 20px; /* This adds some space above the button */
+  cursor: pointer; /* This changes the mouse pointer to a hand when hovering over the button */
+}
+
+/* This is the style for the features section */
+.features {
+  width: 80%; /* This sets the width of the features section to 80% of the main section width */
+  display: flex; /* This makes the features section a flexible container that can adjust its size and position of its children */
+  justify-content: space-around; /* This distributes the features section children evenly along the horizontal axis */
+  margin-top: 20px; /* This adds some space above the features section */
+}
+
+/* This is the style for the feature section */
+.feature {
+  width: 30%; /* This sets the width of the feature section to 30% of the features section width */
+  text-align: center; /* This aligns the text of the feature section to the center */
+}
+
+/* This is the style for the feature image */
+.feature img {
+  width: 100%; /* This sets the width of the feature image to 100% of the feature section width */
+  height: auto; /* This sets the height of the feature image to auto, which means it will keep its aspect ratio */
+}
+
+/* This is the style for the feature heading */
+.feature h3 {
+  font-size: 18px; /* This sets the font size of the feature heading to 18 pixels */
+  font-weight: bold; /* This sets the font weight of the feature heading to bold */
+  margin-top: 10px; /* This adds some space above the feature heading */
+}
+
+/* This is the style for the feature paragraph */
+.feature p {
+  font-size: 16px; /* This sets the font size of the feature paragraph to 16 pixels */
+  margin-top: 10px; /* This adds some space above the feature paragraph */
+}
+
+/* This is the style for the footer section */
+/* This is the style for the footer section */
+footer {
+  display: flex; /* This makes the footer a flexible container that can adjust its size and position of its children */
+  justify-content: space-around; /* This distributes the footer children evenly along the horizontal axis */
+  background-color: #EE1C25; /* This sets the background color of the footer to red */
+  color: white; /* This sets the color of the text of the footer to white */
+  height: 150px; /* This sets the height of the footer to 150 pixels */
+  padding: 20px; /* This adds some space around the footer */
+}
+
+/* This is the style for the contact section */
+.contact {
+  width: 30%; /* This sets the width of the contact section to 30% of the footer width */
+}
+
+/* This is the style for the contact heading */
+.contact h4 {
+  font-size: 18px; /* This sets the font size of the contact heading to 18 pixels */
+  font-weight: bold; /* This sets the font weight of the contact heading to bold */
+  margin-bottom: 10px; /* This adds some space below the contact heading */
+}
+
+/* This is the style for the contact paragraphs */
+.contact p {
+  font-size: 16px; /* This sets the font size of the contact paragraphs to 16 pixels */
+  margin-bottom: 5px; /* This adds some space below the contact paragraphs */
+}
+
+/* This is the style for the social section */
+.social {
+  width: 30%; /* This sets the width of the social section to 30% of the footer width */
+}
+
+/* This is the style for the social heading */
+.social h4 {
+  font-size: 18px; /* This sets the font size of the social heading to 18 pixels */
+  font-weight: bold; /* This sets the font weight of the social heading to bold */
+  margin-bottom: 10px; /* This adds some space below the social heading */
+}
+
+/* This is the style for the social list */
+.social ul {
+  display: flex; /* This makes the social list a flexible container that can adjust its size and position of its children */
+  list-style: none; /* This removes the default bullets of the list items */
+}
+
+/* This is the style for the social list items */
+.social li {
+  margin-right: 10px; /* This adds some space to the right of the list items */
+}
+
+/* This is the style for the social links */
+.social a {
+  display: block; /* This makes the social links block-level elements that take up the full width of their parent */
+  width: 40px; /* This sets the width of the social links to 40 pixels */
+  height: 40px; /* This sets the height of the social links to 40 pixels */
+}
+
+/* This is the style for the social images */
+.social img {
+  width: 100%; /* This sets the width of the social images to 100% of the social links width */
+  height: auto; /* This sets the height of the social images to auto, which means they will keep their aspect ratio */
+}
+
+/* This is the style for the legal section */
+.legal {
+  width: 30%; /* This sets the width of the legal section to 30% of the footer width */
+}
+
+/* This is the style for the legal paragraph */
+.legal p {
+  font-size: 16px; /* This sets the font size of the legal paragraph to 16 pixels */
+  margin-bottom: 10px; /* This adds some space below the legal paragraph */
+}
+
+/* This is the style for the legal list */
+.legal ul {
+  display: flex; /* This makes the legal list a flexible container that can adjust its size and position of its children */
+  list-style: none; /* This removes the default bullets of the list items */
+}
+
+/* This is the style for the legal list items */
+.legal li {
+  margin-right: 10px; /* This adds some space to the right of the list items */
+}
+
+/* This is the style for the legal links */
+.legal a {
+  display: block; /* This makes the legal links block-level elements that take up the full width of their parent */
+  text-decoration: none; /* This removes the default underline of the links */
+  color: white; /* This sets the color of the links to white */
+  font-size: 16px; /* This sets the font size of the links to 16 pixels */
+}
+
+/* This is the style for the responsive design */
+@media (max-width: 768px) {
+  /* This is the media query that applies the following styles when the screen width is less than or equal to 768 pixels */
+  header {
+    flex-direction: column; /* This makes the header children stack vertically */
+    height: auto; /* This sets the height of the header to auto, which means it will adjust to its content */
+  }
+
+  .logo {
+    width: 100%; /* This sets the width of the logo section to 100% of the header width */
+  }
+
+  .slogan {
+    width: 100%; /* This sets the width of the slogan section to 100% of the header width */
+  }
+
+  nav {
+    flex-direction: column; /* This makes the navigation bar children stack vertically */
+    height: auto; /* This sets the height of the navigation bar to auto, which means it will adjust to its content */
+  }
+
+  nav ul {
+    flex-direction: column; /* This makes the navigation bar list children stack vertically */
+  }
+
+  nav li {
+    width: 100%; /* This sets the width of the navigation bar list items to 100% of the navigation bar list width */
+  }
+
+  main {
+    width: 100%; /* This sets the width of the main section to 100% of the screen width */
+  }
+
+  .intro {
+    width: 100%; /* This sets the width of the introduction section to 100% of the main section width */
+  }
+
+  .features {
+    flex-direction: column; /* This makes the features section children stack vertically */
+    width: 100%; /* This sets the width of the features section to 100% of the main section width */
+  }
+
+  .feature {
+    width: 100%; /* This sets the width of the feature section to 100% of the features section width */
+    margin-bottom: 20px; /* This adds some space below the feature section */
+  }
+
+  footer {
+    flex-direction: column; /* This makes the footer children stack vertically */
+    height: auto; /* This sets the height of the footer to auto, which means it will adjust to its content */
+  }
+
+  .contact {
+    width: 100%; /* This sets the width of the contact section to 100% of the footer width */
+    margin-bottom: 20px; /* This adds some space below the contact section */
+  }
+
+  .social {
+    width: 100%; /* This sets the width of the social section to 100% of the footer width */
+    margin-bottom: 20px; /* This adds some space below the social section */
+  }
+
+  .legal {
+    width: 100%; /* This sets the width of the legal section to 100% of the footer width */
+  }
+}
+
+
+  </style>
+
+  <!-- This is the code to link to the web fonts from Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato&family=Lobster&family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Chinese Mine Logo">
+    </div>
+    <div class="slogan">
+      <h1>Chinese Mine</h1>
+      <p>Learn Mandarin through sentence mining</p>
+    </div>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="home.html" class="active">Home</a></li>
+      <li><a href="srs.html">SRS App</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="signup.html">Sign Up</a></li>
+      <li><a href="login.html">Log In</a></li>
+    </ul>
+  </nav>    <main>
+        {% block content %}
+        <!-- This is the content section that can be overridden by child templates -->
+        {% endblock %}
+    </main>
+      <footer>
+    <div class="contact">
+      <h4>Contact Us</h4>
+      <p>Email: info@chinesemine.com</p>
+    </div>
+    <div class="social">
+      <h4>Follow Us</h4>
+      <ul>
+        <li><a href="https://www.facebook.com/chinesemine"><img src="facebook.png" alt="Facebook"></a></li>
+        <li><a href="https://www.twitter.com/chinesemine"><img src="twitter.png" alt="Twitter"></a></li>
+        <li><a href="https://www.instagram.com/chinesemine"><img src="instagram.png" alt="Instagram"></a></li>
+        <li><a href="https://www.youtube.com/chinesemine"><img src="youtube.png" alt="YouTube"></a></li>
+      </ul>
+    </div>
+    <div class="legal">
+      <p>© 2024 Chinese Mine. All rights reserved.</p>
+      <ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms and Conditions</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
